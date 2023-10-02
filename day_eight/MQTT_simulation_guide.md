@@ -102,4 +102,5 @@ Connection error: Connection Refused: not authorised.
 # MQTT simulation on Windows
 
 To install and run mosquitto MQTT broker on windows follow the steps mentioned in this [link](https://cedalo.com/blog/how-to-install-mosquitto-mqtt-broker-on-windows/)
+
 Steps to be ignored are: 4, 6, 11, 12 in the above mentioned link.

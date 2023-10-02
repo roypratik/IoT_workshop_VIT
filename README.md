@@ -49,6 +49,7 @@
 
 - Preferred OS (ubuntu 18.04 or above), can use virtual box as well.
 - Arduino IDE
+- Mosquitto MQTT broker, check [here](day_eight\MQTT_simulation_guide.md)
 - Node-js, check [here](day_seven/node_red_install_guide.md)
 - Node-red, check [here](day_seven/node_red_install_guide.md)
 - Circuit.io online
