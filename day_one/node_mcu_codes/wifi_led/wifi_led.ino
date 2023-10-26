@@ -3,7 +3,7 @@
 const char* ssid = "Airtel_#roy_509";
 const char* password = "Pratik@982211";
  
-int ledPin = D0;
+int ledPin = D3;
 WiFiServer server(80);
  
 void setup() {

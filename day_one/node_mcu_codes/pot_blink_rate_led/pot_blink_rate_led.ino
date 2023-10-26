@@ -1,4 +1,4 @@
-int ledPin = 3;
+int ledPin = D3;
 int potPin = A0;
 
 void setup() {
