@@ -1,5 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
+#include <DHT11.h>
+
 // WiFi
 const char* ssid = "Airtel_#roy_509";
 const char* password = "Pratik@982211";
@@ -7,6 +9,8 @@ const char* password = "Pratik@982211";
 const char* mqtt_server = "broker.mqtt-dashboard.com";
 WiFiClient espClient;
 PubSubClient client(espClient);
+
+DHT11 dht11(D4);
 
 void setup_wifi();
 
@@ -41,17 +45,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
-    /*
-     YOU MIGHT NEED TO CHANGE THIS LINE, IF YOU'RE HAVING PROBLEMS WITH MQTT MULTIPLE CONNECTIONS
-     To change the ESP device ID, you will have to give a new name to the ESP8266.
-     Here's how it looks:
-       if (client.connect("ESP8266Client")) {
-     You can do it like this:
-       if (client.connect("ESP1_Office")) {
-     Then, for the other ESP:
-       if (client.connect("ESP2_Garage")) {
-      That should solve your MQTT multiple connections problem
-    */
+
     if (client.connect("ESP8266Client")) {
       Serial.println("connected");  
       // Subscribe or resubscribe to a topic
@@ -73,14 +67,49 @@ void loop() {
   if(!client.loop())
     client.connect("ESP8266Client");
     
-    
-    int randNumber = random(10, 20);
-    static char ran_v[7];
- 
-    dtostrf(randNumber, 6, 2, ran_v);
+    // Attempt to read the temperature and humidity values from the DHT11 sensor.
+    int temperature = dht11.readTemperature();
 
-    client.publish("temp_roy982211", ran_v);
-    Serial.println(randNumber);
+    // If using ESP32 or ESP8266 (xtensa architecture), uncomment the delay below.
+    // This ensures stable readings when calling methods consecutively.
+    delay(50);
+
+    int humidity = dht11.readHumidity();
+
+    if (temperature != DHT11::ERROR_CHECKSUM && temperature != DHT11::ERROR_TIMEOUT &&
+        humidity != DHT11::ERROR_CHECKSUM && humidity != DHT11::ERROR_TIMEOUT)
+    {
+        Serial.print("Temperature: ");
+        Serial.print(temperature);
+        Serial.println(" °C");
+        
+        static char temp_v[7];
+        dtostrf(temperature, 6, 2, temp_v);
+
+        client.publish("temp_roy982211", temp_v);
+
+        Serial.print("Humidity: ");
+        Serial.print(humidity);
+        Serial.println(" %");
+
+        static char humi_v[7];
+        dtostrf(humidity, 6, 2, humi_v);
+
+        client.publish("humi_roy982211", humi_v);
+    }
+    else
+    {
+        if (temperature == DHT11::ERROR_TIMEOUT || temperature == DHT11::ERROR_CHECKSUM)
+        {
+            Serial.print("Temperature Reading Error: ");
+            Serial.println(DHT11::getErrorString(temperature));
+        }
+        if (humidity == DHT11::ERROR_TIMEOUT || humidity == DHT11::ERROR_CHECKSUM)
+        {
+            Serial.print("Humidity Reading Error: ");
+            Serial.println(DHT11::getErrorString(humidity));
+        }
+    }
 
     delay(1000);
 }
