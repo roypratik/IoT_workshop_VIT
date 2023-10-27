@@ -13,18 +13,17 @@
 - Brief on HTTP protocol
 - Intro to circuit.io diagramming tool
 - Intro to Nodered
+- Discuss about online simulation tools: tinkercad and wokwi
 
 ## Day seven Agenda: Hands-on
 
-- Building a simple circuit diagram with nodemcu
+- Building a simple circuit with nodemcu on circuit.io
 - Blinking LED on nodemcu
 - Using the serial monitor and Serial reading
 - Button controlled LED and Blink rate control
 - Wifi connection from NodeMCU and LED control from remote web server
-- Sending temperature data to cloud
-- Creating a dashboard on node-red
-- Display temperature Data UI
-- Discuss about online simulation tools (optional)
+- Sending simulated data to cloud and creating a dashboard on node-red
+- Display data on UI dashboard
 
 ## Day eight Agenda: Theory
 
@@ -43,7 +42,7 @@
 - Data logging using MQTT in node-red
 - LED control using MQTT. 
 - Create a SCADA dashboard on Node-red
-- Discuss few projects
+- Discuss few projects (optional)
 
 ## Software Stack:
 
