@@ -88,7 +88,7 @@ void loop() {
     client.print("Off");
   }
   client.println("<br><br>");
-  client.println("<a href=\"/LED=ON\"\"><button>Turn On </button></a>");
+  client.println("<a href=\"/LED=ON\"\"><button>Turn HIGH </button></a>");
   client.println("<a href=\"/LED=OFF\"\"><button>Turn Off </button></a><br />");  
   client.println("</html>");
  

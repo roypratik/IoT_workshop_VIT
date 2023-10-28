@@ -28,21 +28,25 @@
 ## Day eight Agenda: Theory
 
 - Refresher on previous session.
-- Introduction to MQTT
+- Intro to MQTT
 - Components of MQTT
-- MQTT callback
-- QoS in MQTT
+- Intro to Mosquitto Broker
+- Library setup on Arduino IDE
+- MQTT callback and QoS in MQTT
 - Different applications of MQTT
+- Mosquitto Broker setup on Windows
+
 
 ## Day eight Agenda: Hands-on
 
-- MQTT simulation on ubuntu.
+- MQTT simulation on ubuntu/windows.
+- QOS replication on node-red/ubuntu/windows
 - Nodemcu MQTT setup.
 - Code Explanation.
 - Data logging using MQTT in node-red
 - LED control using MQTT. 
 - Create a SCADA dashboard on Node-red
-- Discuss few projects (optional)
+- Discuss MQTT based Node-MCU projects from https://www.hackster.io/
 
 ## Software Stack:
 
