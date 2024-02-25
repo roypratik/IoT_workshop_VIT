@@ -20,41 +20,35 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-int ledPin = D3;
-int buttonPin = D2;
-int potPin = A0;
 
+#include <Arduino.h>
+
+// Define the LED pin
+const int ledPin = 13; // Most Arduino boards have an on-board LED on pin 13
+
+// The setup function runs once when you press reset or power the board
 void setup()
 {
-  // setup pin modes
+  // Initialize the digital pin as an output.
   pinMode(ledPin, OUTPUT);
-  pinMode(buttonPin, INPUT_PULLUP);
-  pinMode(potPin, INPUT);
-
-  // initialise serial port with baud rate of 9600
-  Serial.begin(9600);
 }
 
+// The loop function runs over and over again forever
 void loop()
 {
-  // read the state of buttonPin and store it as buttonState (0 or 1)
-  int buttonState = digitalRead(buttonPin);
-
-  // read the value of the pot
-  int potValue = analogRead(potPin);
-
-  // turn led on with the value of button
-  digitalWrite(ledPin, !buttonState);
-
-  // print the value of the button
-  Serial.print("Button: ");
-  Serial.print(!buttonState);
-  Serial.println("   ");
-
-  // print the value of the pot
-  Serial.print("Pot: ");
-  Serial.print(potValue);
-  Serial.println("   ");
-
-  delay(250);
+  digitalWrite(ledPin, HIGH); // Turn the LED on (HIGH is the voltage level)
+  delay(1000);                // Wait for a second (1000 milliseconds)
+  digitalWrite(ledPin, LOW);  // Turn the LED off by making the voltage LOW
+  delay(1000);                // Wait for a second (1000 milliseconds)
 }
+
+/* Key points:
+
+- int ledPin = 13; - Defines the pin number to which the LED is connected.
+- pinMode(ledPin, OUTPUT); - Configures the LED pin as an output in the setup() function.
+- digitalWrite(ledPin, HIGH); - Turns the LED on by setting the pin to HIGH.
+- delay(1000); - Pauses the program execution for 1000 milliseconds (1 second).
+- digitalWrite(ledPin, LOW); - Turns the LED off by setting the pin to LOW.
+- Upload this code to your Arduino board, and you will see the LED connected to pin 13 blinking on and off every second.
+
+*/
