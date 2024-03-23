@@ -23,61 +23,61 @@ SOFTWARE.
 
 #include <Arduino.h>
 
-const int buttonPin = 2; // Pin connected to the button
-const int ledPin = 13;   // Pin connected to the LED
+// const int buttonPin = 2; // Pin connected to the button
+// const int ledPin = 13;   // Pin connected to the LED
 
-bool ledState = false;              // Variable to store the state of the LED
-int buttonState;                    // Current reading from the input pin
-int lastButtonState = LOW;          // Previous reading from the input pin
-unsigned long lastDebounceTime = 0; // Last time the output pin was toggled
-unsigned long debounceDelay = 50;   // The debounce time; increase if the output flickers
+// bool ledState = false;              // Variable to store the state of the LED
+// int buttonState;                    // Current reading from the input pin
+// int lastButtonState = LOW;          // Previous reading from the input pin
+// unsigned long lastDebounceTime = 0; // Last time the output pin was toggled
+// unsigned long debounceDelay = 50;   // The debounce time; increase if the output flickers
 
-void setup()
-{
-    pinMode(ledPin, OUTPUT);
-    pinMode(buttonPin, INPUT_PULLUP);
-    digitalWrite(ledPin, ledState);
-    Serial.begin(9600); // Initialize serial communication at 9600 bits per second
-}
+// void setup()
+// {
+//     pinMode(ledPin, OUTPUT);
+//     pinMode(buttonPin, INPUT_PULLUP);
+//     digitalWrite(ledPin, ledState);
+//     Serial.begin(9600); // Initialize serial communication at 9600 bits per second
+// }
 
-void loop()
-{
-    // Debounce button input
-    int reading = digitalRead(buttonPin);
-    if (reading != lastButtonState)
-    {
-        lastDebounceTime = millis();
-    }
-    if ((millis() - lastDebounceTime) > debounceDelay)
-    {
-        if (reading != buttonState)
-        {
-            buttonState = reading;
-            if (buttonState == LOW)
-            {
-                ledState = !ledState;
-                digitalWrite(ledPin, ledState);
-            }
-        }
-    }
-    lastButtonState = reading;
+// void loop()
+// {
+//     // Debounce button input
+//     int reading = digitalRead(buttonPin);
+//     if (reading != lastButtonState)
+//     {
+//         lastDebounceTime = millis();
+//     }
+//     if ((millis() - lastDebounceTime) > debounceDelay)
+//     {
+//         if (reading != buttonState)
+//         {
+//             buttonState = reading;
+//             if (buttonState == LOW)
+//             {
+//                 ledState = !ledState;
+//                 digitalWrite(ledPin, ledState);
+//             }
+//         }
+//     }
+//     lastButtonState = reading;
 
-    // Check for serial input
-    if (Serial.available() > 0)
-    {
-        String command = Serial.readStringUntil('\n');
-        if (command == "ON")
-        {
-            digitalWrite(ledPin, HIGH);
-            Serial.println("LED turned ON");
-        }
-        else if (command == "OFF")
-        {
-            digitalWrite(ledPin, LOW);
-            Serial.println("LED turned OFF");
-        }
-    }
-}
+//     // Check for serial input
+//     if (Serial.available() > 0)
+//     {
+//         String command = Serial.readStringUntil('\n');
+//         if (command == "ON")
+//         {
+//             digitalWrite(ledPin, HIGH);
+//             Serial.println("LED turned ON");
+//         }
+//         else if (command == "OFF")
+//         {
+//             digitalWrite(ledPin, LOW);
+//             Serial.println("LED turned OFF");
+//         }
+//     }
+// }
 
 /*
 Conditional Statements: Used to make decisions based on serial input.

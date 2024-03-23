@@ -23,24 +23,24 @@ SOFTWARE.
 
 #include <Arduino.h>
 
-// Define the LED pin
-const int ledPin = 13; // Most Arduino boards have an on-board LED on pin 13
+// // Define the LED pin
+// const int ledPin = 13; // Most Arduino boards have an on-board LED on pin 13
 
-// The setup function runs once when you press reset or power the board
-void setup()
-{
-  // Initialize the digital pin as an output.
-  pinMode(ledPin, OUTPUT);
-}
+// // The setup function runs once when you press reset or power the board
+// void setup()
+// {
+//   // Initialize the digital pin as an output.
+//   pinMode(ledPin, OUTPUT);
+// }
 
-// The loop function runs over and over again forever
-void loop()
-{
-  digitalWrite(ledPin, HIGH); // Turn the LED on (HIGH is the voltage level)
-  delay(1000);                // Wait for a second (1000 milliseconds)
-  digitalWrite(ledPin, LOW);  // Turn the LED off by making the voltage LOW
-  delay(1000);                // Wait for a second (1000 milliseconds)
-}
+// // The loop function runs over and over again forever
+// void loop()
+// {
+//   digitalWrite(ledPin, HIGH); // Turn the LED on (HIGH is the voltage level)
+//   delay(1000);                // Wait for a second (1000 milliseconds)
+//   digitalWrite(ledPin, LOW);  // Turn the LED off by making the voltage LOW
+//   delay(1000);                // Wait for a second (1000 milliseconds)
+// }
 
 /* Key points:
 You can use the digital output to directly control high (5V) or low (0V) states on an output pin. Below is a simple example that shows how to control an LED as a digital output.

@@ -23,30 +23,30 @@ SOFTWARE.
 
 #include <Arduino.h>
 
-const int buttonPin = 2; // Define the pin for the button
-int buttonState = 0;     // Variable to store the button state
+// const int buttonPin = 2; // Define the pin for the button
+// int buttonState = 0;     // Variable to store the button state
 
-void setup()
-{
-  pinMode(buttonPin, INPUT); // Set the button pin as input
-  Serial.begin(9600);        // Initialize serial communication
-}
+// void setup()
+// {
+//   pinMode(buttonPin, INPUT); // Set the button pin as input
+//   Serial.begin(9600);        // Initialize serial communication
+// }
 
-void loop()
-{
-  buttonState = digitalRead(buttonPin); // Read the state of the button
+// void loop()
+// {
+//   buttonState = digitalRead(buttonPin); // Read the state of the button
 
-  if (buttonState == HIGH)
-  {
-    Serial.println("Button is pressed"); // Print a message when button is pressed
-  }
-  else
-  {
-    Serial.println("Button is not pressed"); // Print a message when button is not pressed
-  }
+//   if (buttonState == HIGH)
+//   {
+//     Serial.println("Button is pressed"); // Print a message when button is pressed
+//   }
+//   else
+//   {
+//     Serial.println("Button is not pressed"); // Print a message when button is not pressed
+//   }
 
-  delay(100); // Delay for debouncing
-}
+//   delay(100); // Delay for debouncing
+// }
 
 /*
 In this code:
