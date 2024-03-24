@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/pratikroy/IoT_workshop_VIT/Session_1/Arduino_FDP_001/src",
+      "program": "/Users/pratikroy/IoT_workshop_VIT/Session_1/Arduino_FDP_001/src/build/Debug/outDebug"
+    }
+  ]
+}
