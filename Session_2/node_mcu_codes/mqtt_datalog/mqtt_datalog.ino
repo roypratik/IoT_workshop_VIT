@@ -29,7 +29,9 @@ SOFTWARE.
 const char *ssid = "Airtel_#roy_509";
 const char *password = "Pratik@982211";
 // MQTT Broker
-const char *mqtt_server = "broker.mqtt-dashboard.com";
+// const char *mqtt_server = "broker.mqtt-dashboard.com";
+const char *mqtt_server = "192.168.1.12";
+
 WiFiClient espClient;
 PubSubClient client(espClient);
 
