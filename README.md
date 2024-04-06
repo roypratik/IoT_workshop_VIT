@@ -13,7 +13,6 @@ The code provided as part of this repository is ONLY for learning purposes!
  - Pointers
  - Function Pointers
  - Optimizations
- - GDB debugging
  - Coding Standards and Static Analysis
 
 # Instructions
