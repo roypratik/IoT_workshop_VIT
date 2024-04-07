@@ -1,5 +1,5 @@
-#include "include/utils_1.h"
-#include "include/utils_2.h"
+#include "../include/utils_1.h"
+#include "../include/utils_2.h"
 
 #include <stdio.h>
 
