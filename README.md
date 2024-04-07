@@ -7,7 +7,7 @@ The code provided as part of this repository is ONLY for learning purposes!
 
  - Embedded System
  - Memory Layout in C
- - Build and Compilation
+ - Build and Compilation, Make System
  - Fixed Width Integer (Signed and Unsigned)
  - Bit Manipulation
  - Pointers
